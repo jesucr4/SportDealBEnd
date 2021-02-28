@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -125,5 +126,13 @@ public class Instalacion implements Serializable {
 	public void setModalidad(Modalidad modalidad) {
 		this.modalidad = modalidad;
 	}
+
+	@Override
+	public String toString() {
+		return "Instalacion [id=" + id + ", capacidad=" + capacidad + ", f_Construccion=" + f_Construccion + ", imagen="
+				+ Arrays.toString(imagen) + ", localidad=" + localidad + ", nombre=" + nombre +  ", modalidad=" + modalidad.getDescripcion() + "]";
+	}
+	
+	
 
 }

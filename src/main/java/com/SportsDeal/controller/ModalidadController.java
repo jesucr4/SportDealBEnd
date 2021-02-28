@@ -1,5 +1,7 @@
 package com.SportsDeal.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +20,17 @@ public class ModalidadController {
 	public Iterable<Modalidad> getTodasModalidades(){
 		return this.modalidadrepo.findAll();
 	}
+	
+	@GetMapping("/modalidad/filterByDescripcion")
+	public Modalidad filterByDescripcion (String descripcion){
+		return modalidadrepo.findByDescripcion(descripcion);
+	}
+	
+	@GetMapping("/modalidad/filterById")
+	public Modalidad filterByIModalidad (int id){
+		return modalidadrepo.findById(id);
+	}
+	
 	
 	
 }

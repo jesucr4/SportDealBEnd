@@ -7,4 +7,6 @@ import com.SportsDeal.model.entity.Modalidad;
 @Repository
 public interface ModalidadRepository extends CrudRepository<Modalidad, Integer> {
 
+	public Modalidad findByDescripcion(String descripcion);
+	public Modalidad findById(int id);
 }
